@@ -55,9 +55,9 @@ public class Util {
 
     // EDITOR PATHS
 
-    public static URL getIconPath(String iconName) throws MalformedURLException {
+    public static String getIconPath(String iconName) {
         String ext = ".png";
-        return new URL("file:" + SRC_CONTENT_PATH + SRC_ICON_PATH + iconName + ext);
+        return SRC_CONTENT_PATH + SRC_ICON_PATH + iconName + ext;
     }
 
     public static URL getFxmlPath(String fxmlName) throws MalformedURLException {
