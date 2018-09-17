@@ -1,5 +1,6 @@
 package util.window;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Controller {
@@ -8,9 +9,12 @@ public abstract class Controller {
 
     public void init(Window parentWindow) {
         this.parentWindow = parentWindow;
+        parentWindow.start();
     }
 
     protected void add(NestedController controller) {
+        if (controllers == null)
+            controllers = new ArrayList<>();
         controllers.add(controller);
         controller.init(parentWindow, this);
     }

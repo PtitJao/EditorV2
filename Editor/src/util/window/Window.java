@@ -22,7 +22,7 @@ public abstract class Window<T extends Controller>{
             controller = loader.getController();
             stage.setScene(new Scene(loader.getRoot()));
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
         reloadTitle();
@@ -36,7 +36,7 @@ public abstract class Window<T extends Controller>{
         controller.init(this);
     }
 
-    protected void start() {
+    public void start() {
         stage.show();
     }
 
